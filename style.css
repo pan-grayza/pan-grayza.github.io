@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
+
+:root {
+    --primary-color: #a3d3ff;
+    --primary-color-700: #12325a;
+    --primary-color-200: #bde0fe;
+    --secondary-color: #ffafcc;
+    --secondary-color-200: #ffc8dd;
+    --purple: #cdb4db;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Dongle";
+}
+
+h1 {
+    color: var(--primary-color-700);
+    font-size: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+}
+main {
+    margin: 0 2rem 0 2rem;
+}
+
+.logo {
+    margin: auto 0 auto 1.5rem;
+    font-size: 4rem;
+}
+
+.menu {
+    margin: auto 0 auto 0;
+}
+
+.about,
+.work,
+.contact {
+    color: var(--primary-color-700);
+    font-size: 2rem;
+    text-decoration: none;
+    margin: 0 1rem 0 0;
+}
