@@ -9,22 +9,34 @@
     </head>
     <body>
         <header>
-            <h1 class="logo">SZ</h1>
-            <div class="menu">
-                <a href="#" class="about">about</a>
-                <a href="#" class="work">work</a>
-                <a href="#" class="contact">contact</a>
+            <div class="logo">
+                <h1>SZ</h1>
             </div>
+
+            <nav role="navigation">
+                <div class="menuToggle">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <ul class="menu">
+                        <a href="#about"><li id="first-a-in-menu">about</li></a>
+                        <a href="#work"><li>work</li></a>
+                        <a href="#contact"><li>contact</li></a>
+                    </ul>
+                </div>
+            </nav>
         </header>
         <main>
             <section>
-                <h1>about</h1>
+                <h1 id="about">about</h1>
             </section>
             <section>
-                <h1>work</h1>
+                <h1 id="work">work</h1>
             </section>
             <section>
-                <h1>contact</h1>
+                <h1 id="contact">contact</h1>
             </section>
         </main>
         <footer></footer>
