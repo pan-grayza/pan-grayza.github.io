@@ -31,13 +31,14 @@ h2 {
 }
 
 header {
+    position: fixed;
     width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: var(--primary-color);
 }
 main {
-    margin: 0 2rem 0 2rem;
+    margin: 35% 2rem 0 2rem;
 }
 
 a {
