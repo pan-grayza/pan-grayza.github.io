@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        <span id="about"></span>
         <header>
             <div class="logo">
                 <h1>SZ</h1>
@@ -22,7 +23,7 @@
                     <ul class="menu">
                         <a href="#about"><li id="first-a-in-menu">about</li></a>
                         <a href="#skills"><li>skills</li></a>
-                        <a href="#work"><li>work</li></a>
+                        <a href="#projects"><li>projects</li></a>
                         <a href="#contact"><li>contact</li></a>
                     </ul>
                 </div>
@@ -31,19 +32,43 @@
 
         <main>
             <section>
-                <h1 id="about">about</h1>
+                <h1>about</h1>
                 <h2 class="greetings">
                     Hi, my name is Stepan Zagray <br />
                     I'm Front-End Developer based in Ukraine.
+                    <span id="skills"></span>
                 </h2>
             </section>
-            <section id="skills">
+
+            <section>
                 <h1>skills</h1>
+                <div class="skill-grid">
+                    <div class="skill-card">
+                        <img src="images/html5.png" alt="" />
+                        <h2>HTML</h2>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/css3.png" alt="" />
+                        <h2>CSS</h2>
+                    </div>
+                    <div class="skill-card">
+                        <img src="images/javascript.png" alt="" />
+                        <h2>Javascript</h2>
+                    </div>
+                    <div id="projects" class="skill-card">
+                        <img src="images/jquery.png" alt="" />
+                        <h2>JQuery</h2>
+                    </div>
+                    <div id="projects" class="skill-card">
+                        <img src="images/git.png" alt="" />
+                        <h2>git</h2>
+                    </div>
+                </div>
             </section>
-            <section id="work">
-                <h1>work</h1>
+            <section>
+                <h1 id="contact">projects</h1>
             </section>
-            <section id="contact">
+            <section>
                 <h1>contact</h1>
             </section>
         </main>

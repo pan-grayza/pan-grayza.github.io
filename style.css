@@ -22,6 +22,7 @@ body {
 body {
     position: relative;
     color: var(--primary-color-700);
+    overflow-y: auto;
 }
 h1 {
     font-size: 3rem;
@@ -38,9 +39,6 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: var(--primary-color);
-}
-main {
-    margin: 7rem 2rem 0 2rem;
 }
 
 a {
@@ -219,6 +217,58 @@ a {
 <-----------END------------->
 
 <-----------MENU------------->
+
+<-----------END------------->
+*/
+
+/*
+<-----------START------------->
+
+<-----------MAIN------------->
+
+<-----------START------------->
+*/
+
+main {
+    top: 4rem;
+    margin: 7rem 5% 0 5%;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.skill-card {
+    min-width: 9rem;
+    min-height: 9rem;
+    text-align: center;
+}
+.skill-card img {
+    height: 15vh;
+    width: 15vh;
+}
+
+@media screen and (min-width: 600px) {
+    .skill-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (min-width: 800px) {
+    .skill-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media screen and (min-width: 1000px) {
+    .skill-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/*
+<-----------END------------->
+
+<-----------MAIN------------->
 
 <-----------END------------->
 */
