@@ -21,10 +21,13 @@ body {
 }
 body {
     position: relative;
+    color: var(--primary-color-700);
 }
 h1 {
-    color: var(--primary-color-700);
     font-size: 3rem;
+}
+h2 {
+    font-size: 2rem;
 }
 
 header {
