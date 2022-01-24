@@ -10,9 +10,9 @@ document.getElementsByTagName("head")[0].appendChild(script)
 
 $('input[id="menu-checkbox"]').on("change", function (e) {
     if ($(this).prop("checked")) {
-        $("body").css("overflow", "hidden")
+        $("body").css("overflow-y", "hidden")
     } else {
-        $("body").css("overflow", "auto")
+        $("body").css("overflow-y", "auto")
     }
 })
 
