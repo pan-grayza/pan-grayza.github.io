@@ -36,6 +36,26 @@ $('input[id="menu-checkbox"]').on("change", function (e) {
 <-----------END------------->
 */
 
+const getBrowser = () => {
+    if (navigator.userAgent.indexOf("Chrome") != -1) {
+        return "Chrome"
+    } else if (navigator.userAgent.indexOf("Opera") != -1) {
+        return "Opera"
+    } else if (navigator.userAgent.indexOf("MSIE") != -1) {
+        return "IE"
+    } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+        return "Firefox"
+    } else {
+        return "unknown"
+    }
+}
+
+const menu = document.getElementsByClassName("menu")[0]
+
+if (getBrowser() === "Chrome") {
+    menu.style = "top: 87.5vh"
+}
+
 //If user in dark mode
 
 const isDarkMode = () => {
