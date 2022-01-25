@@ -3,10 +3,14 @@
 :root {
     --primary-color: #a3d3ff;
     --primary-color-700: #12325a;
+    --primary-color-500: #356fa5;
     --primary-color-200: #bde0fe;
     --secondary-color: #ffafcc;
     --secondary-color-200: #ffc8dd;
     --purple: #cdb4db;
+}
+label {
+    pointer-events: none;
 }
 
 html,
@@ -18,6 +22,7 @@ body {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 body {
     position: relative;
@@ -25,10 +30,10 @@ body {
     overflow-y: auto;
 }
 h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 h2 {
-    font-size: 2rem;
+    font-size: 2.25rem;
 }
 
 header {
@@ -39,6 +44,20 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: var(--primary-color);
+    z-index: 5;
+}
+
+main {
+    top: 4rem;
+    margin: 7rem 5% 0 5%;
+}
+
+footer {
+    padding-top: 10rem;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    background-color: var(--primary-color-700);
 }
 
 a {
@@ -70,7 +89,7 @@ a {
 /*
 <-----------START------------->
 
-<-----------MENU------------->
+<-----------MENU-------------->
 
 <-----------START------------->
 */
@@ -214,25 +233,20 @@ a {
 }
 
 /*
-<-----------END------------->
+<-----------END-------------->
 
 <-----------MENU------------->
 
-<-----------END------------->
+<-----------END-------------->
 */
 
 /*
 <-----------START------------->
 
-<-----------MAIN------------->
+<-----------MAIN-------------->
 
 <-----------START------------->
 */
-
-main {
-    top: 4rem;
-    margin: 7rem 5% 0 5%;
-}
 
 .skill-grid {
     display: grid;
@@ -266,9 +280,181 @@ main {
 }
 
 /*
-<-----------END------------->
+<-----------END-------------->
 
 <-----------MAIN------------->
 
-<-----------END------------->
+<-----------END-------------->
 */
+
+/*
+<-----------START-------------->
+
+<-----------FOOTER------------->
+
+<-----------START-------------->
+*/
+
+.contact-container {
+    margin: 0 auto;
+
+    width: 15rem;
+    min-height: 15rem;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    justify-content: center;
+
+    text-transform: uppercase;
+}
+
+.contact-form {
+    margin: -1rem auto 30vh auto;
+    position: relative;
+    width: 15rem;
+    text-align: left;
+}
+
+.contact-container h1 {
+    color: var(--primary-color);
+    margin: 0 auto 0 auto;
+}
+
+.content-name {
+    transition: all 0.3s ease;
+}
+
+.input-name,
+.input-email,
+.form-message {
+    margin: 0 0 1.25rem 0;
+
+    height: 1.5rem;
+    width: 96% !important;
+}
+
+.input-name input,
+.input-email input {
+    padding: 0.25rem;
+    width: 100%;
+    border-radius: 0.5rem;
+
+    font-size: 1.5rem;
+    font-family: "Dongle";
+    color: var(--primary-color);
+
+    background: var(--primary-color-700);
+    outline: none;
+    border: none;
+
+    transition: all 0.3s ease;
+}
+
+.input-name label,
+.input-email label,
+.form-message label {
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0rem;
+    width: 15rem;
+    border-bottom: 1px solid var(--primary-color);
+
+    transition: all 0.3s ease;
+}
+.input-name label {
+    top: 2.4rem;
+}
+
+.input-email label {
+    top: 5.15rem;
+}
+.form-message label {
+    top: 8.3rem;
+}
+
+.form-message textarea {
+    margin-top: 0.4rem;
+    padding: 0.25rem;
+    width: 14.25rem !important;
+    height: 1.25rem;
+
+    font-family: "Dongle";
+    font-size: 1.5rem;
+    color: var(--primary-color);
+
+    outline: none;
+    overflow: hidden;
+    resize: none;
+    border: none;
+    background: var(--primary-color-700);
+}
+
+.form-message textarea::placeholder,
+.input-name input::placeholder,
+.input-email input::placeholder {
+    color: var(--primary-color-200);
+}
+
+.contact-form button {
+    margin: 2rem auto auto auto;
+
+    width: 100% !important;
+    height: 3rem;
+
+    font-size: 1.75rem;
+}
+
+/*
+<-----------END---------------->
+
+<-----------FOOTER------------->
+
+<-----------END---------------->
+*/
+
+.btn-three {
+    color: var(--primary-color);
+    transition: all 0.5s;
+    position: relative;
+    border: none;
+    background: none;
+}
+.btn-three:hover {
+    color: var(--primary-color-200);
+}
+.btn-three::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: var(--primary-color-200);
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+.btn-three:hover::before {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+}
+.btn-three::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid var(--primary-color-200);
+    transform: scale(1.2, 1.2);
+}
+.btn-three:hover::after {
+    opacity: 1;
+    transform: scale(1, 1);
+}
