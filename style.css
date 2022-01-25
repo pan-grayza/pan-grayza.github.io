@@ -53,6 +53,7 @@ main {
 }
 
 footer {
+    margin-top: 2.5rem;
     padding-top: 10rem;
     position: relative;
     text-align: center;
