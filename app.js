@@ -27,8 +27,6 @@ menuA.forEach.call(menuA, function (element) {
         }
     })
 })
-
-console.log(menuA)
 /*
 <-----------END------------->
 
