@@ -52,7 +52,7 @@ const getBrowser = () => {
 const menu = document.getElementsByClassName("menu")[0]
 
 if (getBrowser() === "Chrome") {
-    menu.style = "top: 87.5vh"
+    menu.style.top = "100vh"
 }
 
 //If user in dark mode
