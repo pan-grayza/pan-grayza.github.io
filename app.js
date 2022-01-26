@@ -1,5 +1,3 @@
-//# sourceMappingURL=https://code.jquery.com/jquery-3.4.1.min.js
-
 /*
 <-----------START------------->
 
@@ -8,24 +6,29 @@
 <-----------START------------->
 */
 
-const script = document.createElement("script")
-script.src = "https://code.jquery.com/jquery-3.6.0.min.js"
-script.type = "text/javascript"
-document.getElementsByTagName("head")[0].appendChild(script)
-
-$('input[id="menu-checkbox"]').on("change", function (e) {
-    if ($(this).prop("checked")) {
-        $("body").css("overflow-y", "hidden")
-        $("a").click(function () {
-            $("#menu-checkbox").prop("checked", false)
-            $("body").css("overflow-y", "auto")
-        })
+let menuCheckbox = document.getElementById("menu-checkbox")
+let menuA = document.querySelectorAll(".menu-a")
+menuCheckbox.addEventListener("click", () => {
+    if (menuCheckbox.checked) {
+        document.body.style.overflowy = "hidden"
     } else {
-        $("body").css("overflow-y", "auto")
-        //$("#menu-checkbox").prop("checked", true)
+        document.body.style.overflowy = "auto"
+        //menuCheckbox.checked = true
     }
 })
 
+menuA.forEach.call(menuA, function (element) {
+    element.addEventListener("click", () => {
+        if (menuCheckbox.checked) {
+            menuCheckbox.checked = false
+        } else {
+            document.body.style.overflowy = "auto"
+            //menuCheckbox.checked = true
+        }
+    })
+})
+
+console.log(menuA)
 /*
 <-----------END------------->
 
