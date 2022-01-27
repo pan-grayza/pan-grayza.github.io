@@ -55,8 +55,9 @@ if (getBrowser() === "Chrome") {
     menu.style.top = "100vh"
 }
 
+//
 //If user in dark mode
-
+//
 const isDarkMode = () => {
     window.matchMedia("(prefers-color-scheme: dark)").matches
 }
