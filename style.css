@@ -111,7 +111,7 @@ header {
     cursor: pointer;
     position: absolute;
     right: 1.8rem;
-    top: 1.6rem;
+    top: 1.5rem;
 
     opacity: 0; /* hide this */
     z-index: 2; /* and place it over the hamburger */
@@ -157,7 +157,7 @@ header {
  */
 .menuToggle input:checked ~ span {
     opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
+    transform: rotate(45deg) translate(4px, -1px);
     background: var(--primary-color-200);
 }
 
@@ -174,7 +174,7 @@ header {
  */
 .menuToggle input:checked ~ span:nth-last-child(2) {
     opacity: 1;
-    transform: rotate(-45deg) translate(0, -1px);
+    transform: rotate(-45deg) translate(0, 6px);
 }
 
 /*
