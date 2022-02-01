@@ -338,10 +338,23 @@ footer {
     align-items: center;
 }
 
-.contact-and-copy-email h2,
-.contact-and-copy-email h1 {
-    color: var(--primary-color-700);
+.contact-and-copy-email h2 {
     margin: 0;
+    top: 52.5%;
+    left: 20%;
+
+    position: absolute;
+
+    font-size: 1.25rem;
+
+    color: var(--primary-color-200);
+}
+
+.copy-arrow {
+    position: absolute;
+    left: 50%;
+    top: 32.5%;
+    transform: scale(0.15);
 }
 
 textarea {
@@ -472,6 +485,8 @@ Button Style
 @media screen and (min-width: 800px) {
     .btn-three:hover {
         background: none;
+        color: var(--primary-color);
+        transform: scale(1.05);
     }
     .btn-three:hover::before {
         opacity: 0;
