@@ -1,3 +1,7 @@
+const copyButton = document.querySelector(".btn-three")
+const textarea = document.querySelector("textarea")
+const copiedDiv = document.querySelector(".copied-text")
+
 /*
 <-----------START------------->
 
@@ -55,6 +59,18 @@ if (getBrowser() === "Chrome") {
     menu.style.top = "100vh"
 }
 
+// Copy Button
+
+copyButton.addEventListener("click", () => {
+    textarea.value = "zagraystepan@gmail.com"
+    document.execCommand("copy", textarea.select())
+    copiedDiv.style.top = "90%"
+    copiedDiv.style.opacity = "1"
+    setTimeout(() => {
+        copiedDiv.style.top = "110%"
+        copiedDiv.style.opacity = "0.25"
+    }, 4000)
+})
 //
 //If user in dark mode
 //

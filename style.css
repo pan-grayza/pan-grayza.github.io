@@ -3,8 +3,8 @@
 :root {
     --primary-color: #a3d3ff;
     --primary-color-700: #12325a;
-    --primary-color-500: #356fa5;
-    --primary-color-200: #bde0fe;
+    --primary-color-500: #2f6394;
+    --primary-color-200: #c4e2fc;
     --secondary-color: #ffafcc;
     --secondary-color-200: #ffc8dd;
     --purple: #cdb4db;
@@ -314,7 +314,7 @@ section h2 {
 */
 footer {
     margin-top: 0.5rem;
-    padding-top: 20%;
+    padding-top: 15%;
 
     position: relative;
     display: flex;
@@ -329,6 +329,28 @@ footer {
     background-color: var(--primary-color-700);
 }
 
+.contact-and-copy-email {
+    display: flex;
+    flex-direction: rows;
+
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.contact-and-copy-email h2,
+.contact-and-copy-email h1 {
+    color: var(--primary-color-700);
+    margin: 0;
+}
+
+textarea {
+    opacity: 0;
+    position: absolute;
+    top: -9999999px;
+    left: -9999999px;
+}
+
 .contact-container {
     margin: 0 auto;
 
@@ -340,9 +362,12 @@ footer {
     flex-direction: column;
 
     text-align: center;
-    justify-content: center;
 
     text-transform: uppercase;
+}
+.contact-container h1 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
 }
 
 @media screen and (min-width: 800px) {
@@ -367,117 +392,45 @@ footer {
     }
 }
 
-.contact-form {
-    margin: -1rem auto 30vh auto;
-    position: relative;
-    width: 15rem;
-    text-align: left;
-}
-
-.contact-container h1 {
-    color: var(--primary-color);
-    margin: 0 auto 0 auto;
-}
-
-.content-name {
-    transition: all 0.3s ease;
-}
-
-.input-name,
-.input-email,
-.form-message {
-    margin: 0 0 1.25rem 0;
-
-    height: 1.5rem;
-    width: 96% !important;
-}
-
-.input-name input,
-.input-email input {
-    padding: 0.25rem;
-    width: 100%;
-    border-radius: 0.5rem;
-
-    font-size: 1.5rem;
-    font-family: "Dongle";
-    color: var(--primary-color);
-
-    background: var(--primary-color-700);
-    outline: none;
-    border: none;
-
-    transition: all 0.3s ease;
-}
-
-label {
-    pointer-events: none;
-}
-
-.input-name label,
-.input-email label,
-.form-message label {
-    font-size: 1.5rem;
-    position: absolute;
-    left: 0rem;
-    width: 15rem;
-    border-bottom: 1px solid var(--primary-color);
-
-    transition: all 0.3s ease;
-}
-.input-name label {
-    top: 2.4rem;
-}
-
-.input-email label {
-    top: 5.15rem;
-}
-.form-message label {
-    top: 8.3rem;
-}
-
-.form-message textarea {
-    margin-top: 0.4rem;
-    padding: 0.25rem;
-    width: 14.25rem !important;
-    height: 1.5rem;
-
-    font-family: "Dongle";
-    font-size: 1.5rem;
-    color: var(--primary-color);
-
-    outline: none;
-    overflow: hidden;
-    resize: none;
-    border: none;
-    background: var(--primary-color-700);
-}
-
-.form-message textarea::placeholder,
-.input-name input::placeholder,
-.input-email input::placeholder {
-    color: var(--primary-color-200);
-}
-/* 
-Button style
+/*
+Scroll to contact
 */
-.contact-form button {
-    margin: 2rem auto auto auto;
-
-    width: 100% !important;
-    height: 3rem;
-
-    font-size: 1.75rem;
+section:nth-child(1) {
+    padding-top: 5rem !important;
 }
+
+section,
+footer {
+    scroll-snap-align: start;
+}
+
+/*
+Button Style
+*/
+
 .btn-three {
+    position: absolute;
+    padding-bottom: 0.25rem;
+
+    width: calc(100% + 3rem) !important;
+    height: 2.5rem !important;
+
+    font-size: 2rem;
+    font-family: "Dongle";
+    z-index: 1;
+
     color: var(--primary-color-700);
-    transition: all 0.5s;
-    position: relative;
     border: none;
+    border-radius: 5px;
     background: var(--primary-color);
+
     cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    vertical-align: center;
+    transition: all 0.5s;
 }
 .btn-three:hover {
-    color: var(--primary-color-200);
     background: none;
 }
 .btn-three::before {
@@ -489,6 +442,7 @@ Button style
     height: 100%;
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
     opacity: 0.3;
     transition: all 0.5s;
 }
@@ -497,36 +451,32 @@ Button style
     transform: scale(0.5, 0.5);
 }
 .btn-three::after {
+    font-size: 2.5rem;
     content: "";
+    color: var(--primary-color-200);
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
-    z-index: 1;
+
+    z-index: 20;
     opacity: 0;
     transition: all 0.5s;
     border: 1px solid var(--primary-color-200);
+    border-radius: 5px;
     transform: scale(1.2, 1.2);
 }
 .btn-three:hover::after {
+    z-index: 200;
     opacity: 1;
     transform: scale(1, 1);
-}
-
-/*
-Scroll to contact
-*/
-.scroll-container {
-    margin: 0;
-}
-section:nth-child(1) {
-    padding-top: 5rem !important;
-}
-
-section,
-footer {
-    scroll-snap-align: start;
 }
 
 /*
@@ -536,3 +486,30 @@ footer {
 
 <-----------END---------------->
 */
+.copied-text {
+    padding-top: 0.25rem;
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+    top: 110%;
+    left: calc(50% - 3rem);
+    transform: translateY(-100%);
+    width: 6rem;
+    height: 1.75rem;
+
+    justify-content: center;
+    pointer-events: none;
+
+    font-size: 1.25rem;
+
+    border: 2px solid #1f8f48;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #32df71;
+
+    background-color: #32df71;
+    color: white;
+    opacity: 0.25;
+
+    transition: all 0.4s;
+    z-index: 3000;
+}
