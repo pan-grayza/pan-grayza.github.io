@@ -430,9 +430,7 @@ Button Style
     vertical-align: center;
     transition: all 0.5s;
 }
-.btn-three:hover {
-    background: none;
-}
+
 .btn-three::before {
     content: "";
     position: absolute;
@@ -446,10 +444,7 @@ Button Style
     opacity: 0.3;
     transition: all 0.5s;
 }
-.btn-three:hover::before {
-    opacity: 0;
-    transform: scale(0.5, 0.5);
-}
+
 .btn-three::after {
     font-size: 2.5rem;
     content: "";
@@ -473,10 +468,20 @@ Button Style
     border-radius: 5px;
     transform: scale(1.2, 1.2);
 }
-.btn-three:hover::after {
-    z-index: 200;
-    opacity: 1;
-    transform: scale(1, 1);
+
+@media screen and (min-width: 800px) {
+    .btn-three:hover {
+        background: none;
+    }
+    .btn-three:hover::before {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+    }
+    .btn-three:hover::after {
+        z-index: 200;
+        opacity: 1;
+        transform: scale(1, 1);
+    }
 }
 
 /*
