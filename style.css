@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
 
 :root {
@@ -69,6 +68,9 @@ header {
 .logo h1 {
     margin: 0;
     font-size: 4rem;
+}
+.logo a {
+    color: var(--primary-color-700);
 }
 
 .menu {
@@ -331,8 +333,12 @@ footer {
 }
 
 .contact-and-copy-email {
+    margin-bottom: 2rem;
+
     display: flex;
     flex-direction: rows;
+
+    height: 3rem;
 
     justify-content: center;
     text-align: center;
@@ -367,7 +373,7 @@ textarea {
     text-transform: uppercase;
 }
 .contact-container h1 {
-    margin: 0 0 1rem 0;
+    margin: 0;
     color: var(--primary-color);
 }
 
@@ -387,8 +393,8 @@ textarea {
 
     footer {
         transform: scaleY(1.1);
-        padding-top: 15%;
-        margin-top: 4rem;
+        padding-top: 10%;
+        margin-top: 3.5rem;
         height: calc(80vh - 6rem);
     }
 }
@@ -442,7 +448,7 @@ Button Style
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: -1;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     opacity: 0.3;
@@ -481,522 +487,44 @@ Button Style
     transform: scale(1, 1);
 }
 
-/*
-<-----------END---------------->
+.social {
+    position: absolute;
 
-<-----------FOOTER------------->
+    top: 135%;
+    left: 50%;
+    transform: translateX(-50%);
 
-<-----------END---------------->
-*/
-.copied-text {
-    padding-top: 0.25rem;
+    width: 75%;
+
     display: flex;
-    position: fixed;
-    overflow: hidden;
-    top: 110%;
-    left: calc(50% - 3rem);
-    transform: translateY(-100%);
-    width: 6rem;
-    height: 1.75rem;
+    flex-direction: row;
 
-    justify-content: center;
-    pointer-events: none;
-
-    font-size: 1.25rem;
-
-    border: 2px solid #1f8f48;
-    border-radius: 10px;
-    box-shadow: 0 0 5px #32df71;
-
-    background-color: #32df71;
-    color: white;
-    opacity: 0.25;
-
-    transition: all 0.4s;
-    z-index: 3000;
-}
-=======
-@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
-
-:root {
-    --primary-color: #a3d3ff;
-    --primary-color-700: #12325a;
-    --primary-color-500: #2f6394;
-    --primary-color-200: #c4e2fc;
-    --secondary-color: #ffafcc;
-    --secondary-color-200: #ffc8dd;
-    --purple: #cdb4db;
-}
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-
-    font-family: "Dongle";
-
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    box-sizing: border-box;
-    scroll-snap-type: y proximity;
-
-    z-index: 1;
-}
-body {
-    position: relative;
-    color: var(--primary-color-700);
-    overflow-y: auto;
-}
-h1 {
-    font-size: 3.5rem;
-}
-h2 {
-    font-size: 2.25rem;
-}
-
-a {
-    text-decoration: none;
-}
-
-/*
-<-----------START------------->
-
-<-----------HEADER-------------->
-
-<-----------START------------->
-*/
-
-header {
-    position: fixed;
-    width: 100%;
-    height: 6rem;
-    display: flex;
     justify-content: space-between;
-    background-color: var(--primary-color);
-    z-index: 5;
 }
-
-.logo {
-    margin: auto auto auto 1.5rem;
-    vertical-align: middle;
-}
-
-.logo h1 {
-    margin: 0;
-    font-size: 4rem;
-}
-
-.menu {
-    margin: auto 0 auto 0;
-}
-
-.about,
-.work,
-.contact {
-    color: var(--primary-color-700);
-    font-size: 2rem;
-    text-decoration: none;
-    margin: 0 1rem 0 0;
-}
-
-/*
-<-----------START------------->
-
-<-----------MENU-------------->
-
-<-----------START------------->
-*/
-.menuToggle {
-    display: block;
-    margin: 2rem 2rem auto auto;
-    position: realtive;
-    padding: 0;
-    max-height: 5vh;
-    z-index: 0;
-
-    -webkit-user-select: none;
-    user-select: none;
-}
-
-.menuToggle input {
-    display: block;
-    width: 2.75rem;
-    height: 2.5rem;
-    padding: 0;
-    margin: auto;
-    cursor: pointer;
-    position: absolute;
-    right: 1.8rem;
-    top: 1.5rem;
-
-    opacity: 0; /* hide this */
-    z-index: 2; /* and place it over the hamburger */
-
-    -webkit-touch-callout: none;
-}
-
-/*
- * Just a quick hamburger
- */
-.menuToggle span {
-    display: block;
-    width: 2.3rem;
-    height: 0.3rem;
-    overflow: vivsible;
-    min-width: 0;
-    margin-bottom: 0.313rem;
+.reddit-icon,
+.github-icon,
+.dev-icon {
     position: relative;
-    top: 0;
 
-    background: var(--primary-color-700);
-    border-radius: 3px;
+    height: 2rem;
+    width: 2rem;
 
-    z-index: 1;
-
-    transform-origin: 4px 0px;
-
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+    z-index: 3000;
 }
 
-.menuToggle span:first-child {
-    transform-origin: 0% 0%;
+.reddit-icon {
+    filter: invert(0) sepia(10%) saturate(90%) hue-rotate(190deg)
+        brightness(90%) contrast(100%);
 }
 
-.menuToggle span:nth-last-child(2) {
-    transform-origin: 0% 100%;
+.github-icon {
+    filter: invert(0%) sepia(0%) saturate(90%) hue-rotate(360deg)
+        brightness(100%) contrast(111%);
 }
-
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-.menuToggle input:checked ~ span {
-    opacity: 1;
-    transform: rotate(45deg) translate(4px, -1px);
-    background: var(--primary-color-200);
+.dev-icon {
+    filter: invert(5%) sepia(0%) saturate(90%) hue-rotate(360deg)
+        brightness(100%) contrast(100%);
 }
-
-/*
- * But let's hide the middle one.
- */
-.menuToggle input:checked ~ span:nth-last-child(3) {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/*
- * Ohyeah and the last one should go the other direction
- */
-.menuToggle input:checked ~ span:nth-last-child(2) {
-    opacity: 1;
-    transform: rotate(-45deg) translate(0, 6px);
-}
-
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
-.menu {
-    overflow: hidden;
-    float: left;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    padding: 30vh 0 0 0;
-    margin: auto;
-    top: 50vh;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0.95;
-
-    background: var(--primary-color-700);
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-    /* to stop flickering of text in safari */
-
-    transform-origin: 0% 0%;
-    transform: translate(100%, 0);
-
-    transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
-
-.menu li {
-    max-width: 100vw;
-    height: 5rem;
-    margin: auto;
-    overflow: hidden;
-    justify-content: center;
-    text-align: center;
-    color: var(--primary-color-200);
-
-    padding: 0;
-    font-size: 4rem;
-}
-.menu a {
-    height: 5rem;
-}
-
-/*
- * And let's fade it in from the left
- */
-.menuToggle input:checked ~ .menu {
-    transform: none;
-}
-
-/*
-<-----------END-------------->
-
-<-----------MENU------------->
-
-<-----------END-------------->
-*/
-
-/*
-<-----------START------------->
-
-<-----------MAIN-------------->
-
-<-----------START------------->
-*/
-
-section {
-    padding: 3rem 0 0 0;
-    width: 100%;
-}
-section h1,
-section h2 {
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-.skill-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.skill-card {
-    min-width: 9rem;
-    min-height: 9rem;
-    text-align: center;
-}
-.skill-card h2 {
-    margin: 0;
-}
-.skill-card img {
-    height: 15vh;
-    width: 15vh;
-}
-
-@media screen and (min-width: 600px) {
-    .skill-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    section h1,
-    section h2 {
-        margin-left: 2rem;
-    }
-    .skill-card h2 {
-        margin-left: 0;
-    }
-}
-@media screen and (min-width: 950px) {
-    .skill-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-@media screen and (min-width: 1000px) {
-    .skill-grid {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
-
-/*
-<-----------END-------------->
-
-<-----------MAIN------------->
-
-<-----------END-------------->
-*/
-
-/*
-<-----------START-------------->
-
-<-----------FOOTER------------->
-
-<-----------START-------------->
-*/
-footer {
-    margin-top: 0.5rem;
-    padding-top: 15%;
-
-    position: relative;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: calc(95vh - 6rem);
-
-    letter-spacing: 0.15rem;
-
-    background-color: var(--primary-color-700);
-}
-
-.contact-and-copy-email {
-    display: flex;
-    flex-direction: rows;
-
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-}
-
-.contact-and-copy-email h2,
-.contact-and-copy-email h1 {
-    color: var(--primary-color-700);
-    margin: 0;
-}
-
-textarea {
-    opacity: 0;
-    position: absolute;
-    top: -9999999px;
-    left: -9999999px;
-}
-
-.contact-container {
-    margin: 0 auto;
-
-    width: 15rem;
-    min-height: 15rem;
-
-    position: relative;
-    display: flex;
-    flex-direction: column;
-
-    text-align: center;
-
-    text-transform: uppercase;
-}
-.contact-container h1 {
-    margin: 0 0 1rem 0;
-    color: var(--primary-color);
-}
-
-@media screen and (min-width: 800px) {
-    .contact-container {
-        transform: scale(1.3);
-    }
-    footer {
-        margin-top: 3rem;
-    }
-}
-
-@media screen and (min-width: 925px) {
-    .contact-container {
-        transform: scalex(1.1);
-    }
-
-    footer {
-        transform: scaleY(1.1);
-        padding-top: 15%;
-        margin-top: 4rem;
-        height: calc(80vh - 6rem);
-    }
-}
-
-/*
-Scroll to contact
-*/
-section:nth-child(1) {
-    padding-top: 5rem !important;
-}
-
-section,
-footer {
-    scroll-snap-align: start;
-}
-
-/*
-Button Style
-*/
-
-.btn-three {
-    position: absolute;
-    padding-bottom: 0.25rem;
-
-    width: calc(100% + 3rem) !important;
-    height: 2.5rem !important;
-
-    font-size: 2rem;
-    font-family: "Dongle";
-    z-index: 1;
-
-    color: var(--primary-color-700);
-    border: none;
-    border-radius: 5px;
-    background: var(--primary-color);
-
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    vertical-align: center;
-    transition: all 0.5s;
-}
-.btn-three:hover {
-    background: none;
-}
-.btn-three::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 5px;
-    opacity: 0.3;
-    transition: all 0.5s;
-}
-.btn-three:hover::before {
-    opacity: 0;
-    transform: scale(0.5, 0.5);
-}
-.btn-three::after {
-    font-size: 2.5rem;
-    content: "";
-    color: var(--primary-color-200);
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    z-index: 20;
-    opacity: 0;
-    transition: all 0.5s;
-    border: 1px solid var(--primary-color-200);
-    border-radius: 5px;
-    transform: scale(1.2, 1.2);
-}
-.btn-three:hover::after {
-    z-index: 200;
-    opacity: 1;
-    transform: scale(1, 1);
-}
-
 /*
 <-----------END---------------->
 
@@ -1005,7 +533,7 @@ Button Style
 <-----------END---------------->
 */
 .copied-text {
-    padding-top: 0.25rem;
+    padding-top: 0.2rem;
     display: flex;
     position: fixed;
     overflow: hidden;
@@ -1013,16 +541,17 @@ Button Style
     left: calc(50% - 3rem);
     transform: translateY(-100%);
     width: 6rem;
-    height: 1.75rem;
+    height: 1.9rem;
 
     justify-content: center;
     pointer-events: none;
 
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.03rem;
 
-    border: 2px solid #1f8f48;
+    border: 3px solid #1f8f48;
     border-radius: 10px;
-    box-shadow: 0 0 5px #32df71;
+    box-shadow: 0 0 2px #32df71;
 
     background-color: #32df71;
     color: white;
@@ -1031,4 +560,3 @@ Button Style
     transition: all 0.4s;
     z-index: 3000;
 }
->>>>>>> 0518a4b (commit on 'main')
