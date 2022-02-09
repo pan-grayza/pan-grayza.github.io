@@ -338,23 +338,10 @@ footer {
     align-items: center;
 }
 
-.contact-and-copy-email h2 {
+.contact-and-copy-email h2,
+.contact-and-copy-email h1 {
+    color: var(--primary-color-700);
     margin: 0;
-    top: 52.5%;
-    left: 20%;
-
-    position: absolute;
-
-    font-size: 1.25rem;
-
-    color: var(--primary-color-200);
-}
-
-.copy-arrow {
-    position: absolute;
-    left: 50%;
-    top: 32.5%;
-    transform: scale(0.15);
 }
 
 textarea {
@@ -443,7 +430,10 @@ Button Style
     vertical-align: center;
     transition: all 0.5s;
 }
-
+.btn-three:hover {
+    background: none;
+    color: var(--primary-color-200);
+}
 .btn-three::before {
     content: "";
     position: absolute;
@@ -452,12 +442,15 @@ Button Style
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     opacity: 0.3;
     transition: all 0.5s;
 }
-
+.btn-three:hover::before {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+}
 .btn-three::after {
     font-size: 2.5rem;
     content: "";
@@ -481,22 +474,10 @@ Button Style
     border-radius: 5px;
     transform: scale(1.2, 1.2);
 }
-
-@media screen and (min-width: 800px) {
-    .btn-three:hover {
-        background: none;
-        color: var(--primary-color);
-        transform: scale(1.05);
-    }
-    .btn-three:hover::before {
-        opacity: 0;
-        transform: scale(0.5, 0.5);
-    }
-    .btn-three:hover::after {
-        z-index: 200;
-        opacity: 1;
-        transform: scale(1, 1);
-    }
+.btn-three:hover::after {
+    z-index: 200;
+    opacity: 1;
+    transform: scale(1, 1);
 }
 
 /*
