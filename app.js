@@ -64,10 +64,10 @@ if (getBrowser() === "Chrome") {
 copyButton.addEventListener("click", () => {
     textarea.value = "zagraystepan@gmail.com"
     document.execCommand("copy", textarea.select())
-    copiedDiv.style.top = "90%"
+    copiedDiv.style.top = "85%"
     copiedDiv.style.opacity = "1"
     setTimeout(() => {
-        copiedDiv.style.top = "110%"
+        copiedDiv.style.top = "105%"
         copiedDiv.style.opacity = "0.25"
     }, 4000)
 })

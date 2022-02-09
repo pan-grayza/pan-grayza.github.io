@@ -69,6 +69,9 @@ header {
     margin: 0;
     font-size: 4rem;
 }
+.logo a {
+    color: var(--primary-color-700);
+}
 
 .menu {
     margin: auto 0 auto 0;
@@ -330,8 +333,12 @@ footer {
 }
 
 .contact-and-copy-email {
+    margin-bottom: 2rem;
+
     display: flex;
     flex-direction: rows;
+
+    height: 3rem;
 
     justify-content: center;
     text-align: center;
@@ -366,7 +373,7 @@ textarea {
     text-transform: uppercase;
 }
 .contact-container h1 {
-    margin: 0 0 1rem 0;
+    margin: 0;
     color: var(--primary-color);
 }
 
@@ -386,8 +393,8 @@ textarea {
 
     footer {
         transform: scaleY(1.1);
-        padding-top: 15%;
-        margin-top: 4rem;
+        padding-top: 10%;
+        margin-top: 3.5rem;
         height: calc(80vh - 6rem);
     }
 }
@@ -441,7 +448,7 @@ Button Style
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: -1;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     opacity: 0.3;
@@ -480,6 +487,44 @@ Button Style
     transform: scale(1, 1);
 }
 
+.social {
+    position: absolute;
+
+    top: 135%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 75%;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+}
+.reddit-icon,
+.github-icon,
+.dev-icon {
+    position: relative;
+
+    height: 2rem;
+    width: 2rem;
+
+    z-index: 3000;
+}
+
+.reddit-icon {
+    filter: invert(0) sepia(10%) saturate(90%) hue-rotate(190deg)
+        brightness(90%) contrast(100%);
+}
+
+.github-icon {
+    filter: invert(0%) sepia(0%) saturate(90%) hue-rotate(360deg)
+        brightness(100%) contrast(111%);
+}
+.dev-icon {
+    filter: invert(5%) sepia(0%) saturate(90%) hue-rotate(360deg)
+        brightness(100%) contrast(100%);
+}
 /*
 <-----------END---------------->
 
@@ -488,7 +533,7 @@ Button Style
 <-----------END---------------->
 */
 .copied-text {
-    padding-top: 0.25rem;
+    padding-top: 0.2rem;
     display: flex;
     position: fixed;
     overflow: hidden;
@@ -496,16 +541,17 @@ Button Style
     left: calc(50% - 3rem);
     transform: translateY(-100%);
     width: 6rem;
-    height: 1.75rem;
+    height: 1.9rem;
 
     justify-content: center;
     pointer-events: none;
 
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.03rem;
 
-    border: 2px solid #1f8f48;
+    border: 3px solid #1f8f48;
     border-radius: 10px;
-    box-shadow: 0 0 5px #32df71;
+    box-shadow: 0 0 2px #32df71;
 
     background-color: #32df71;
     color: white;
