@@ -432,6 +432,7 @@ Button Style
 }
 .btn-three:hover {
     background: none;
+    color: var(--primary-color-200);
 }
 .btn-three::before {
     content: "";
