@@ -5,6 +5,7 @@
     --primary-color-700: #12325a;
     --primary-color-500: #2f6394;
     --primary-color-200: #c4e2fc;
+    --primary-color-100: #d9edff;
     --secondary-color: #ffafcc;
     --secondary-color-200: #ffc8dd;
     --purple: #cdb4db;
@@ -20,16 +21,18 @@ body {
     font-family: "Dongle";
 
     overflow-x: hidden;
+    overflow-y: hidden;
+
     scroll-behavior: smooth;
     box-sizing: border-box;
-    scroll-snap-type: y proximity;
+    /*scroll-snap-type: y proximity;*/
 
     z-index: 1;
 }
 body {
+    background: var(--primary-color-100);
     position: relative;
     color: var(--primary-color-700);
-    overflow-y: auto;
 }
 h1 {
     font-size: 3.5rem;
@@ -249,17 +252,76 @@ header {
 <-----------START------------->
 */
 
+.parallax-wrapper {
+    position: relative;
+
+    margin: 6rem 0 0 0;
+    padding: 0;
+
+    height: calc(100vh - 6rem);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    perspective: 100px;
+}
+
+/*
+circles style
+*/
+.circle {
+    display: block;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    height: 10rem;
+    width: 10rem;
+
+    background: linear-gradient(
+        to right bottom,
+        rgb(69, 63, 156),
+        rgb(16, 25, 77)
+    );
+
+    border-radius: 50%;
+
+    z-index: -1;
+}
+/*
+main style
+*/
+
+.glass {
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3)
+    );
+    border-radius: 1rem;
+}
+
+main {
+    margin: 0;
+    padding-top: 2.5rem;
+}
+
 section {
-    padding: 3rem 0 0 0;
-    width: 100%;
+    position: realtive;
+    margin: 1rem 0.75rem 0 0.75rem;
+    padding: 1rem 0.75rem 1rem 0.75rem;
+    width: calc(100% - 3rem);
+
+    z-index: 1;
 }
 section h1,
 section h2 {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 0;
 }
 
 .skill-grid {
+    margin-top: 0.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -398,19 +460,6 @@ textarea {
         height: calc(80vh - 6rem);
     }
 }
-
-/*
-Scroll to contact
-*/
-section:nth-child(1) {
-    padding-top: 5rem !important;
-}
-
-section,
-footer {
-    scroll-snap-align: start;
-}
-
 /*
 Button Style
 */
@@ -537,7 +586,7 @@ Button Style
     display: flex;
     position: fixed;
     overflow: hidden;
-    top: 110%;
+    top: 115%;
     left: calc(50% - 3rem);
     transform: translateY(-100%);
     width: 6rem;
@@ -555,7 +604,7 @@ Button Style
 
     background-color: #32df71;
     color: white;
-    opacity: 0.25;
+    opacity: 0;
 
     transition: all 0.4s;
     z-index: 3000;

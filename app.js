@@ -1,7 +1,9 @@
 const copyButton = document.querySelector(".btn-three")
 const textarea = document.querySelector("textarea")
 const copiedDiv = document.querySelector(".copied-text")
-
+const parallaxWrapper = document.querySelector(".parallax-wrapper")
+const windowWidth = window.innerWidth > 0 ? window.innerWidth : screen.width
+const windowHeight = window.innerHeight > 0 ? window.innerHeight : screen.height
 /*
 <-----------START------------->
 
@@ -68,7 +70,7 @@ copyButton.addEventListener("click", () => {
     copiedDiv.style.opacity = "1"
     setTimeout(() => {
         copiedDiv.style.top = "105%"
-        copiedDiv.style.opacity = "0.25"
+        copiedDiv.style.opacity = "0"
     }, 4000)
 })
 //
@@ -76,4 +78,47 @@ copyButton.addEventListener("click", () => {
 //
 const isDarkMode = () => {
     window.matchMedia("(prefers-color-scheme: dark)").matches
+}
+
+//
+// Generating background circles
+//
+
+let numberOfCircles
+
+if (windowWidth > 800) {
+    numberOfCircles = Math.round((windowHeight * windowWidth) / 75000)
+} else {
+    numberOfCircles = Math.round((windowHeight * windowWidth) / 40000)
+}
+
+const getRandomNumber = (max, min) => {
+    return Math.floor(Math.random() * (max - min)) + min
+}
+
+let i = numberOfCircles
+let n = 1
+let x
+let y
+let z
+
+while (i > 0) {
+    x = getRandomNumber(1000, -500)
+    y = getRandomNumber(500, -500)
+    z = getRandomNumber(-50, -250)
+
+    let circle = document.createElement("div")
+    circle.classList.add("circle")
+    circle.classList.add(`circle-${n}`)
+    parallaxWrapper.appendChild(circle)
+
+    let circleStyle = document.querySelector(`.circle-${n}`)
+    circleStyle.style.transform = `translateX(${x}vw)`
+    circleStyle.style.transform = `translateY(${y}vh)`
+    circleStyle.style.transform = `translateZ(${z}px)`
+    circleStyle.style.left = `${getRandomNumber(110, -30)}vw`
+    circleStyle.style.top = `${getRandomNumber(150, -10)}vh`
+
+    n++
+    i--
 }
