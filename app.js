@@ -118,6 +118,7 @@ if (getBrowser() === "Chrome") {
         circleStyle.style.transform = `translateZ(${z}px)`
         circleStyle.style.left = `${getRandomNumber(130, -30)}vw`
         circleStyle.style.top = `${getRandomNumber(140, -40)}vh`
+        circleStyle.style.zIndex = `${z}`
 
         n++
         i--
@@ -139,6 +140,7 @@ if (getBrowser() === "Chrome") {
         circleStyle.style.transform = `translateZ(${z}px)`
         circleStyle.style.left = `${getRandomNumber(110, -30)}vw`
         circleStyle.style.top = `${getRandomNumber(150, -10)}vh`
+        circleStyle.style.zIndex = `${z}`
 
         n++
         i--
