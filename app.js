@@ -101,24 +101,46 @@ let n = 1
 let x
 let y
 let z
+if (getBrowser() === "Chrome") {
+    while (i > 0) {
+        x = getRandomNumber(1000, -500)
+        y = getRandomNumber(500, -500)
+        z = getRandomNumber(-50, -250)
 
-while (i > 0) {
-    x = getRandomNumber(1000, -500)
-    y = getRandomNumber(500, -500)
-    z = getRandomNumber(-50, -250)
+        let circle = document.createElement("div")
+        circle.classList.add("circle")
+        circle.classList.add(`circle-${n}`)
+        parallaxWrapper.appendChild(circle)
 
-    let circle = document.createElement("div")
-    circle.classList.add("circle")
-    circle.classList.add(`circle-${n}`)
-    parallaxWrapper.appendChild(circle)
+        let circleStyle = document.querySelector(`.circle-${n}`)
+        circleStyle.style.transform = `translateX(${x}vw)`
+        circleStyle.style.transform = `translateY(${y}vh)`
+        circleStyle.style.transform = `translateZ(${z}px)`
+        circleStyle.style.left = `${getRandomNumber(130, -30)}vw`
+        circleStyle.style.top = `${getRandomNumber(140, -40)}vh`
 
-    let circleStyle = document.querySelector(`.circle-${n}`)
-    circleStyle.style.transform = `translateX(${x}vw)`
-    circleStyle.style.transform = `translateY(${y}vh)`
-    circleStyle.style.transform = `translateZ(${z}px)`
-    circleStyle.style.left = `${getRandomNumber(110, -30)}vw`
-    circleStyle.style.top = `${getRandomNumber(150, -10)}vh`
+        n++
+        i--
+    }
+} else {
+    while (i > 0) {
+        x = getRandomNumber(1000, -500)
+        y = getRandomNumber(500, -500)
+        z = getRandomNumber(-50, -250)
 
-    n++
-    i--
+        let circle = document.createElement("div")
+        circle.classList.add("circle")
+        circle.classList.add(`circle-${n}`)
+        parallaxWrapper.appendChild(circle)
+
+        let circleStyle = document.querySelector(`.circle-${n}`)
+        circleStyle.style.transform = `translateX(${x}vw)`
+        circleStyle.style.transform = `translateY(${y}vh)`
+        circleStyle.style.transform = `translateZ(${z}px)`
+        circleStyle.style.left = `${getRandomNumber(110, -30)}vw`
+        circleStyle.style.top = `${getRandomNumber(150, -10)}vh`
+
+        n++
+        i--
+    }
 }

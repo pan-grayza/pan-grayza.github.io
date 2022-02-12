@@ -263,6 +263,8 @@ header {
     overflow-y: auto;
     overflow-x: hidden;
 
+    scroll-behavior: smooth;
+
     perspective: 100px;
 }
 
