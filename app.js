@@ -2,6 +2,7 @@ const copyButton = document.querySelector(".btn-three")
 const textarea = document.querySelector("textarea")
 const copiedDiv = document.querySelector(".copied-text")
 const parallaxWrapper = document.querySelector(".parallax-wrapper")
+const main = document.querySelector("main")
 const windowWidth = window.innerWidth > 0 ? window.innerWidth : screen.width
 const windowHeight = window.innerHeight > 0 ? window.innerHeight : screen.height
 /*
@@ -86,17 +87,13 @@ const isDarkMode = () => {
 
 let numberOfCircles
 
-const parallaxWrapHeight = parallaxWrapper.offsetHeight
-const parallaxWrapWidth = parallaxWrapper.offsetWidth
+const mainHeight = main.offsetHeight
+const mainWidth = main.offsetWidth
 
 if (windowWidth > 800) {
-    numberOfCircles = Math.round(
-        (parallaxWrapHeight * parallaxWrapWidth) / 75000
-    )
+    numberOfCircles = Math.round((mainHeight * mainWidth) / 100000)
 } else {
-    numberOfCircles = Math.round(
-        (parallaxWrapHeight * parallaxWrapWidth) / 38000
-    )
+    numberOfCircles = Math.round((mainHeight * mainWidth) / 65000)
 }
 
 const getRandomNumber = (max, min) => {
@@ -105,13 +102,9 @@ const getRandomNumber = (max, min) => {
 
 let i = numberOfCircles
 let n = 1
-let x
-let y
 let z
 
 while (i > 0) {
-    x = getRandomNumber(1000, -500)
-    y = getRandomNumber(500, -500)
     z = getRandomNumber(-40, -250)
 
     let circle = document.createElement("div")
@@ -122,11 +115,23 @@ while (i > 0) {
     let circleStyle = document.querySelector(`.circle-${n}`)
     circleStyle.style.transform = `translateZ(${z}px)`
     if (getBrowser() === "Chrome") {
-        circleStyle.style.left = `${getRandomNumber(130, -30)}vw`
-        circleStyle.style.top = `${getRandomNumber(150, -40)}vh`
+        circleStyle.style.left = `${getRandomNumber(
+            Math.floor(130 * (mainWidth / 1000)),
+            -30
+        )}vw`
+        circleStyle.style.top = `${getRandomNumber(
+            Math.floor(130 * ((mainHeight ^ 2) / 1000)),
+            -10
+        )}vh`
     } else {
-        circleStyle.style.left = `${getRandomNumber(110, -30)}vw`
-        circleStyle.style.top = `${getRandomNumber(150, -10)}vh`
+        circleStyle.style.left = `${getRandomNumber(
+            Math.floor(40 * ((mainHeight ^ 2) / 1000)),
+            -40 * (mainWidth / 1000)
+        )}vw`
+        circleStyle.style.top = `${getRandomNumber(
+            Math.floor(130 * ((mainHeight ^ 2) / 1000)),
+            -10
+        )}vh`
     }
 
     circleStyle.style.zIndex = `${z}`
