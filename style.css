@@ -5,7 +5,7 @@
     --primary-color-700: #12325a;
     --primary-color-500: #2f6394;
     --primary-color-200: #c4e2fc;
-    --primary-color-100: #d9edff;
+    --primary-color-100: hsl(208, 100%, 93%);
     --secondary-color: #ffafcc;
     --secondary-color-200: #ffc8dd;
     --purple: #cdb4db;
@@ -296,19 +296,28 @@ main style
 */
 
 .glass {
+    position: realtive;
     background: linear-gradient(
         to right bottom,
         rgba(255, 255, 255, 0.7),
         rgba(255, 255, 255, 0.3)
     );
     border-radius: 1rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
 }
 
-.main-glass-section {
-    padding: 0.75rem;
-    width: calc(100vw - 3rem);
+.clay {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.75rem 2rem 0.25rem 2rem;
+    position: relative;
+    box-shadow: inset -5px -5px 7px hsl(207, 100%, 90%),
+        inset 2px 2px 7px hsl(207, 100%, 90%), 0 0 10px hsl(207, 100%, 92%);
+    border-radius: 1.5rem;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.98);
 }
-
 main {
     margin: 0;
     padding-top: 7rem;
@@ -316,60 +325,45 @@ main {
 
 section {
     position: realtive;
-    margin: 0;
     padding: 0.75rem;
-    width: 100%;
+    margin: 0 0.5rem 0 0.5rem;
+    width: calc(100% - 2.5rem);
 
     z-index: 1;
 }
+
 section h1,
 section h2 {
     margin: 0;
 }
 
-.skill-grid {
-    margin-top: 0.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
-.skill-card {
-    min-width: 9rem;
-    min-height: 9rem;
-    text-align: center;
+.project-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: realtive;
+    width: calc(100% - 4rem);
+    min-height: 10rem;
 }
-.skill-card h2 {
-    margin: 0;
-}
-.skill-card img {
-    height: 15vh;
-    width: 15vh;
+
+.nothing-here-text {
+    color: var(--primary-color-500);
 }
 
 @media screen and (min-width: 600px) {
-    .skill-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    section h1,
-    section h2 {
-        margin-left: 2rem;
-    }
-    .skill-card h2 {
-        margin-left: 0;
-    }
 }
 @media screen and (min-width: 950px) {
     section {
         margin: 1rem 2rem 0 2rem;
         width: calc(100% - 5rem);
-    }
-    .skill-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-@media screen and (min-width: 1000px) {
-    .skill-grid {
-        grid-template-columns: repeat(5, 1fr);
     }
 }
 
