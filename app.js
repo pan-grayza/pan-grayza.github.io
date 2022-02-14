@@ -56,9 +56,18 @@ const getBrowser = () => {
     }
 }
 
+const isSafari =
+    /constructor/i.test(window.HTMLElement) ||
+    (function (p) {
+        return p.toString() === "[object SafariRemoteNotification]"
+    })(
+        !window["safari"] ||
+            (typeof safari !== "undefined" && window["safari"].pushNotification)
+    )
+
 const menu = document.getElementsByClassName("menu")[0]
 
-if (getBrowser() === "Chrome") {
+if (getBrowser() === "Chrome" || isSafari) {
     menu.style.top = "100vh"
 }
 
@@ -114,24 +123,18 @@ while (i > 0) {
 
     let circleStyle = document.querySelector(`.circle-${n}`)
     circleStyle.style.transform = `translateZ(${z}px)`
-    if (getBrowser() === "Chrome") {
+    if (getBrowser() === "Chrome" || isSafari) {
         circleStyle.style.left = `${getRandomNumber(
-            Math.floor(130 * (mainWidth / 1000)),
-            -30
-        )}vw`
-        circleStyle.style.top = `${getRandomNumber(
-            Math.floor(130 * ((mainHeight ^ 2) / 1000)),
-            -10
-        )}vh`
+            mainWidth,
+            (-1 * mainWidth) / 10
+        )}px`
+        circleStyle.style.top = `${getRandomNumber(mainHeight, -10)}px`
     } else {
         circleStyle.style.left = `${getRandomNumber(
-            Math.floor(40 * ((mainHeight ^ 2) / 1000)),
-            -40 * (mainWidth / 1000)
-        )}vw`
-        circleStyle.style.top = `${getRandomNumber(
-            Math.floor(130 * ((mainHeight ^ 2) / 1000)),
-            -10
-        )}vh`
+            mainWidth,
+            (-1 * mainWidth) / 10
+        )}px`
+        circleStyle.style.top = `${getRandomNumber(mainHeight, -10)}px`
     }
 
     circleStyle.style.zIndex = `${z}`
