@@ -327,6 +327,7 @@ main style
 main {
     margin: 0;
     padding-top: 7rem;
+    transform: translatez(-5px) scale(1.05);
 }
 
 section {

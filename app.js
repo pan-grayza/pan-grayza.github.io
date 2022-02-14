@@ -86,10 +86,17 @@ const isDarkMode = () => {
 
 let numberOfCircles
 
+const parallaxWrapHeight = parallaxWrapper.offsetHeight
+const parallaxWrapWidth = parallaxWrapper.offsetWidth
+
 if (windowWidth > 800) {
-    numberOfCircles = Math.round((windowHeight * windowWidth) / 75000)
+    numberOfCircles = Math.round(
+        (parallaxWrapHeight * parallaxWrapWidth) / 75000
+    )
 } else {
-    numberOfCircles = Math.round((windowHeight * windowWidth) / 40000)
+    numberOfCircles = Math.round(
+        (parallaxWrapHeight * parallaxWrapWidth) / 38000
+    )
 }
 
 const getRandomNumber = (max, min) => {
@@ -105,7 +112,7 @@ let z
 while (i > 0) {
     x = getRandomNumber(1000, -500)
     y = getRandomNumber(500, -500)
-    z = getRandomNumber(-50, -250)
+    z = getRandomNumber(-40, -250)
 
     let circle = document.createElement("div")
     circle.classList.add("circle")
@@ -113,8 +120,6 @@ while (i > 0) {
     parallaxWrapper.appendChild(circle)
 
     let circleStyle = document.querySelector(`.circle-${n}`)
-    circleStyle.style.transform = `translateX(${x}vw)`
-    circleStyle.style.transform = `translateY(${y}vh)`
     circleStyle.style.transform = `translateZ(${z}px)`
     if (getBrowser() === "Chrome") {
         circleStyle.style.left = `${getRandomNumber(130, -30)}vw`
