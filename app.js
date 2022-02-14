@@ -118,7 +118,7 @@ while (i > 0) {
     circleStyle.style.transform = `translateZ(${z}px)`
     if (getBrowser() === "Chrome") {
         circleStyle.style.left = `${getRandomNumber(130, -30)}vw`
-        circleStyle.style.top = `${getRandomNumber(140, -40)}vh`
+        circleStyle.style.top = `${getRandomNumber(150, -40)}vh`
     } else {
         circleStyle.style.left = `${getRandomNumber(110, -30)}vw`
         circleStyle.style.top = `${getRandomNumber(150, -10)}vh`

@@ -44,6 +44,12 @@ h2 {
 a {
     text-decoration: none;
 }
+a h1 {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 /*
 <-----------START------------->
@@ -313,7 +319,7 @@ main style
     padding: 0.75rem 2rem 0.25rem 2rem;
     position: relative;
     box-shadow: inset -5px -5px 7px hsl(207, 100%, 90%),
-        inset 2px 2px 7px hsl(207, 100%, 90%), 0 0 10px hsl(207, 100%, 92%);
+        inset 3px 3px 7px hsl(207, 100%, 90%), 0 0 10px hsl(207, 100%, 92%);
     border-radius: 1.5rem;
     backdrop-filter: blur(15px);
     background: rgba(255, 255, 255, 0.98);
