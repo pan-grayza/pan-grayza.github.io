@@ -61,11 +61,11 @@ a h1 {
 
 header {
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 6rem;
     display: flex;
     justify-content: space-between;
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     z-index: 5;
 }
 
@@ -297,8 +297,9 @@ circles style
 
     z-index: -1;
 }
+
 /*
-main style
+materials style
 */
 
 .glass {
@@ -313,17 +314,22 @@ main style
 }
 
 .clay {
-    position: relative;
-    display: inline-block;
     margin-bottom: 1rem;
     padding: 0.75rem 2rem 0.25rem 2rem;
     position: relative;
+    border-radius: 1.5rem;
+}
+
+.white-clay {
     box-shadow: inset -5px -5px 7px hsl(206, 78%, 90%),
         inset 3px 3px 7px hsl(206, 78%, 90%);
-    border-radius: 1.5rem;
-    backdrop-filter: blur(10px);
     background: hsla(200, 100%, 99%, 0.98);
 }
+
+/*
+main style
+*/
+
 main {
     margin: 0;
     padding-top: 7rem;
@@ -336,6 +342,10 @@ section {
     width: calc(100% - 2.5rem);
 
     z-index: 1;
+}
+
+.main-elements {
+    display: inline-block;
 }
 
 section h1,
@@ -611,7 +621,7 @@ Button Style
 
     border: 3px solid #1f8f48;
     border-radius: 10px;
-    box-shadow: 0 0 2px #32df71;
+    box-shadow: 0 0 3px #32df71;
 
     background-color: #32df71;
     color: white;
