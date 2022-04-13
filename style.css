@@ -373,7 +373,7 @@ section h2 {
     justify-content: center;
     padding: 2rem;
     position: relative;
-    width: calc(60% - 2rem);
+    width: calc(100% - 4rem);
     min-height: 10rem;
 }
 
@@ -387,11 +387,9 @@ section h2 {
     border-radius: 0.2rem 0.2rem 1rem 1rem;
 }
 
-.appearing-from-left {
-    margin-left: 0;
-}
+.appearing-from-left,
 .appearing-from-right {
-    margin-left: calc(40% - 2rem);
+    margin-left: 0;
 }
 
 .demo-a {
@@ -414,12 +412,16 @@ section h2 {
         inset -1px -1px 3px hsl(0, 0%, 95%);
 }
 
-@media screen and (min-width: 600px) {
-}
 @media screen and (min-width: 950px) {
     section {
         margin: 1rem 2rem 0 2rem;
         width: calc(100% - 5rem);
+    }
+    .appearing-from-right {
+        margin-left: calc(40% - 2rem);
+    }
+    .project-flex {
+        width: calc(60% - 2rem);
     }
 }
 
