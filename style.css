@@ -376,6 +376,9 @@ section h2 {
     width: calc(100% - 4rem);
     min-height: 10rem;
 }
+.project-flex h2 {
+    font-size: 1.9rem;
+}
 
 .video {
     position: relative;
@@ -404,12 +407,23 @@ section h2 {
         inset -2px -2px 3px hsl(206, 78%, 90%),
         inset 1px 1px 3px hsl(0, 0%, 95%);
     background: hsl(0, 0%, 100%);
-    transition: box-shadow 0.4s ease;
+    transition: all 0.4s ease;
 }
 .demo-a:hover {
     box-shadow: 0px 0px 3px hsl(206, 78%, 90%), 0px 0px 3px hsl(0, 0%, 95%),
         inset 2px 2px 3px hsl(206, 78%, 90%),
         inset -1px -1px 3px hsl(0, 0%, 95%);
+}
+
+.demo-a span {
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: all 0.4s ease;
+}
+.demo-a:hover span {
+    top: 2px;
+    left: 2px;
 }
 
 @media screen and (min-width: 950px) {
@@ -422,6 +436,9 @@ section h2 {
     }
     .project-flex {
         width: calc(60% - 2rem);
+    }
+    .project-flex h2 {
+        font-size: 2rem;
     }
 }
 
