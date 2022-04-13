@@ -123,19 +123,13 @@ while (i > 0) {
 
     let circleStyle = document.querySelector(`.circle-${n}`)
     circleStyle.style.transform = `translateZ(${z}px)`
-    if (getBrowser() === "Chrome" || isSafari) {
-        circleStyle.style.left = `${getRandomNumber(
-            mainWidth,
-            (-1 * mainWidth) / 10
-        )}px`
-        circleStyle.style.top = `${getRandomNumber(mainHeight, -10)}px`
-    } else {
-        circleStyle.style.left = `${getRandomNumber(
-            mainWidth,
-            (-1 * mainWidth) / 10
-        )}px`
-        circleStyle.style.top = `${getRandomNumber(mainHeight, -10)}px`
-    }
+
+    circleStyle.style.left = `${getRandomNumber(
+        mainWidth,
+        (-1 * mainWidth) / 10
+    )}px`
+
+    circleStyle.style.top = `${getRandomNumber(mainHeight, -10)}px`
 
     circleStyle.style.zIndex = `${z}`
 

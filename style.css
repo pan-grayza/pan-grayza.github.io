@@ -9,6 +9,7 @@
     --secondary-color: #ffafcc;
     --secondary-color-200: #ffc8dd;
     --purple: #cdb4db;
+    --a-blue: #1a0dcd;
 }
 
 html,
@@ -62,7 +63,7 @@ a h1 {
 header {
     position: fixed;
     width: 100vw;
-    height: 6rem;
+    height: 5.5rem;
     display: flex;
     justify-content: space-between;
     background: var(--primary-color);
@@ -105,7 +106,6 @@ header {
 .menuToggle {
     display: block;
     margin: 2rem 2rem auto auto;
-    position: realtive;
     padding: 0;
     max-height: 5vh;
     z-index: 0;
@@ -316,14 +316,13 @@ materials style
 .clay {
     margin-bottom: 1rem;
     padding: 0.75rem 2rem 0.25rem 2rem;
-    position: relative;
     border-radius: 1.5rem;
 }
 
 .white-clay {
     box-shadow: inset -5px -5px 7px hsl(206, 78%, 90%),
         inset 3px 3px 7px hsl(206, 78%, 90%);
-    background: hsla(200, 100%, 99%, 0.98);
+    background: hsla(0, 0%, 100%, 0.98);
 }
 
 /*
@@ -336,7 +335,7 @@ main {
 }
 
 section {
-    position: realtive;
+    position: relative;
     padding: 0.75rem;
     margin: 0 0.5rem 0 0.5rem;
     width: calc(100% - 2.5rem);
@@ -353,6 +352,13 @@ section h2 {
     margin: 0;
 }
 
+.react-text {
+    color: #06bcee;
+}
+.firebase-text {
+    color: #ffa714;
+}
+
 .flex-container-column {
     display: flex;
     flex-direction: column;
@@ -365,13 +371,47 @@ section h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: realtive;
-    width: calc(100% - 4rem);
+    padding: 2rem;
+    position: relative;
+    width: calc(60% - 2rem);
     min-height: 10rem;
 }
 
-.nothing-here-text {
-    color: var(--primary-color-500);
+.video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.project-flex .video {
+    margin: 1rem 0 -0.5rem 0;
+    border-radius: 0.2rem 0.2rem 1rem 1rem;
+}
+
+.appearing-from-left {
+    margin-left: 0;
+}
+.appearing-from-right {
+    margin-left: calc(40% - 2rem);
+}
+
+.demo-a {
+    margin-top: 1rem;
+    padding: 0.1rem 1rem 0 1rem;
+    font-size: 2rem;
+    color: var(--a-blue);
+    /* border: 1px solid var(--a-blue); */
+    border-radius: 0.5rem;
+
+    box-shadow: 1px 1px 3px hsl(206, 78%, 90%), -1px -1px 3px hsl(0, 0%, 95%),
+        inset -2px -2px 3px hsl(206, 78%, 90%),
+        inset 1px 1px 3px hsl(0, 0%, 95%);
+    background: hsl(0, 0%, 100%);
+    transition: box-shadow 0.4s ease;
+}
+.demo-a:hover {
+    box-shadow: 0px 0px 3px hsl(206, 78%, 90%), 0px 0px 3px hsl(0, 0%, 95%),
+        inset 2px 2px 3px hsl(206, 78%, 90%),
+        inset -1px -1px 3px hsl(0, 0%, 95%);
 }
 
 @media screen and (min-width: 600px) {
