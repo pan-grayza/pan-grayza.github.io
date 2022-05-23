@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
 
 :root {
     --primary-color: #a3d3ff;
@@ -11,15 +11,18 @@
     --purple: #cdb4db;
     --a-blue: #1a0dcd;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html,
 body {
-    margin: 0;
-    padding: 0;
     height: 100%;
     width: 100%;
 
-    font-family: "Dongle";
+    font-family: 'Dongle';
 
     overflow-x: hidden;
     overflow-y: hidden;
@@ -67,7 +70,7 @@ header {
     display: flex;
     justify-content: space-between;
     background: var(--primary-color);
-    z-index: 5;
+    z-index: 4;
 }
 
 .logo {
@@ -81,10 +84,6 @@ header {
 }
 .logo a {
     color: var(--primary-color-700);
-}
-
-.menu {
-    margin: auto 0 auto 0;
 }
 
 .about,
@@ -199,7 +198,7 @@ header {
     position: absolute;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 115vh;
     padding: 30vh 0 0 0;
     margin: auto;
     top: 50vh;
@@ -320,8 +319,8 @@ materials style
 }
 
 .white-clay {
-    box-shadow: inset -5px -5px 7px hsl(206, 78%, 90%),
-        inset 3px 3px 7px hsl(206, 78%, 90%);
+    box-shadow: inset -5px -5px 7px hsl(205, 55%, 88%),
+        inset 3px 3px 7px hsl(209, 56%, 88%);
     background: hsla(0, 0%, 100%, 0.98);
 }
 
@@ -371,9 +370,9 @@ section h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
     position: relative;
-    width: calc(100% - 2rem);
+    width: 100%;
     min-height: 10rem;
 }
 .project-flex h2 {
@@ -387,9 +386,9 @@ section h2 {
     height: 100%;
 }
 .project-flex .video {
-    width: calc(100%);
-    height: calc(100% + 1.5rem);
-    margin: 1rem 0 -0.5rem 0;
+    width: calc(100% + 2rem);
+    height: calc(100% + 3rem);
+    margin: 1rem 0 -1.5rem -1rem;
     border-radius: 0.2rem 0.2rem 1rem 1rem;
 }
 
@@ -406,14 +405,19 @@ section h2 {
     color: var(--a-blue);
     /* border: 1px solid var(--a-blue); */
     border-radius: 0.5rem;
+    box-shadow: none;
 
-    box-shadow: 1px 1px 3px hsl(206, 78%, 90%), -1px -1px 3px hsl(0, 0%, 95%),
-        inset -2px -2px 3px hsl(206, 78%, 90%),
-        inset 1px 1px 3px hsl(0, 0%, 95%);
     background: hsl(0, 0%, 100%);
     transition: all 0.4s ease;
 }
 .demo-a:hover {
+    box-shadow: 1px 1px 3px hsl(206, 78%, 90%), -1px -1px 3px hsl(0, 0%, 95%),
+        inset -2px -2px 3px hsl(206, 78%, 90%),
+        inset 1px 1px 3px hsl(0, 0%, 95%);
+}
+
+.demo-a:active,
+.demo-a:focus {
     box-shadow: 0px 0px 3px hsl(206, 78%, 90%), 0px 0px 3px hsl(0, 0%, 95%),
         inset 2px 2px 3px hsl(206, 78%, 90%),
         inset -1px -1px 3px hsl(0, 0%, 95%);
@@ -425,9 +429,14 @@ section h2 {
     left: 0;
     transition: all 0.4s ease;
 }
-.demo-a:hover span {
-    top: 2px;
-    left: 2px;
+.demo-a:hover span,
+.demo-a:focus span {
+    top: -1px;
+    left: -1px;
+}
+.demo-a:active span {
+    top: 1px;
+    left: 1px;
 }
 
 @media screen and (min-width: 950px) {
@@ -468,27 +477,27 @@ section h2 {
 <-----------START-------------->
 */
 footer {
-    margin-top: 0.5rem;
-    padding-top: 15%;
-
+    padding: 0;
     position: relative;
     display: flex;
+    flex-direction: column;
 
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: calc(95vh - 6rem);
+    height: 100vh;
 
     letter-spacing: 0.15rem;
 
     background-color: var(--primary-color-700);
+    z-index: 1;
 }
 
 .contact-and-copy-email {
-    margin-bottom: 2rem;
+    position: relative;
 
     display: flex;
-    flex-direction: rows;
+    flex-direction: column;
 
     height: 3rem;
 
@@ -511,30 +520,44 @@ textarea {
 }
 
 .contact-container {
-    margin: 0 auto;
-
-    width: 15rem;
     min-height: 15rem;
 
     position: relative;
     display: flex;
     flex-direction: column;
 
+    justify-content: center;
     text-align: center;
+    align-items: center;
 
     text-transform: uppercase;
 }
-.contact-container h1 {
+.contact-and-copy-email h1 {
+    font-size: 4rem;
     margin: 0;
     color: var(--primary-color);
+}
+
+.copy-hint-text {
+    margin: 0 0 0 0;
+    position: relative;
+    width: 100%;
+
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.copy-hint-text svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    margin: 0 0 -0.25rem 0;
+    fill: var(--primary-color);
 }
 
 @media screen and (min-width: 800px) {
     .contact-container {
         transform: scale(1.3);
-    }
-    footer {
-        margin-top: 3rem;
     }
 }
 
@@ -547,7 +570,6 @@ textarea {
         transform: scaleY(1.1);
         padding-top: 10%;
         margin-top: 3.5rem;
-        height: calc(80vh - 6rem);
     }
 }
 /*
@@ -555,14 +577,15 @@ Button Style
 */
 
 .btn-three {
-    position: absolute;
+    position: relative;
     padding-bottom: 0.25rem;
+    margin: 1rem;
 
-    width: calc(100% + 3rem) !important;
-    height: 2.5rem !important;
+    width: 22rem;
+    height: 2.5rem;
 
     font-size: 2rem;
-    font-family: "Dongle";
+    font-family: 'Dongle';
     z-index: 1;
 
     color: var(--primary-color-700);
@@ -581,7 +604,7 @@ Button Style
     color: var(--primary-color-200);
 }
 .btn-three::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -599,7 +622,7 @@ Button Style
 }
 .btn-three::after {
     font-size: 2.5rem;
-    content: "";
+    content: '';
     color: var(--primary-color-200);
     display: inline-block;
     vertical-align: middle;
@@ -629,11 +652,11 @@ Button Style
 .social {
     position: absolute;
 
-    top: 135%;
+    top: 140%;
     left: 50%;
     transform: translateX(-50%);
 
-    width: 75%;
+    width: 50%;
 
     display: flex;
     flex-direction: row;
@@ -672,7 +695,7 @@ Button Style
 <-----------END---------------->
 */
 .copied-text {
-    padding-top: 0.2rem;
+    padding-top: 0;
     display: flex;
     position: fixed;
     overflow: hidden;
