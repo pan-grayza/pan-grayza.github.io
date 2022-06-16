@@ -657,7 +657,7 @@ Button Style
 .social {
     position: absolute;
 
-    top: 140%;
+    top: 20rem;
     left: 50%;
     transform: translateX(-50%);
 
@@ -691,6 +691,16 @@ Button Style
 .dev-icon {
     filter: invert(5%) sepia(0%) saturate(90%) hue-rotate(360deg)
         brightness(100%) contrast(100%);
+}
+
+.footer-cap {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    z-index: 1;
 }
 /*
 <-----------END---------------->
